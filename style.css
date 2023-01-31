@@ -1,0 +1,48 @@
+/* look up rem and margin-inline. */
+:root{
+    --background: hsl(0, 0%, 8%);
+    --contact-background: hsl(0, 0%, 14%);
+    --accent: hsl(153, 71%, 59%);
+    --big-text: hsl(0, 0%, 100%);
+    --small-text: hsl(0, 0%, 85%);
+    --invalid: hsl(7, 98%, 59%);
+    /* font size ratio: (# px size / default browser size(16px)) */
+    --fs-18px: 1.125rem;
+    --fs-24px: 1.5rem;
+    --fs-32px: 2rem;
+    --fs-40px: 2.5rem;
+    --fs-48px: 3rem;
+    --fs-72px: 4.5rem;
+    --fs-88px: 5.5rem;
+    --container: 69.375rem;
+}
+
+html{
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*, *::before, *::after{
+    box-sizing: inherit;
+}
+
+body{
+    margin:0;
+    font-family: 'Space Grotesk', sans-serif;
+    background-color: var(--background);
+    color: var(--big-text);
+    font-size: var(--fs-body);
+    line-height: 1.56;
+}
+
+.wrapper{
+    width:calc(100% - 2rem);
+    max-width: var(--container);
+    margin-inline: auto;
+
+}
+@media(min-width: 37.5em){
+    .wrapper{
+        width: calc(100% - 3.75rem);
+    }
+}
