@@ -2,7 +2,7 @@
 :root{
     --background: hsl(0, 0%, 8%);
     --contact-background: hsl(0, 0%, 14%);
-    --accent: hsl(153, 71%, 59%);
+    --accent: hsl(204, 100%, 50%);
     --big-text: hsl(0, 0%, 100%);
     --small-text: hsl(0, 0%, 85%);
     --invalid: hsl(7, 98%, 59%);
@@ -35,6 +35,7 @@ body{
     line-height: 1.56;
 }
 
+/* Site's dimensions for all content */
 .wrapper{
     width:calc(100% - 2rem);
     max-width: var(--container);
@@ -44,5 +45,52 @@ body{
 @media(min-width: 37.5em){
     .wrapper{
         width: calc(100% - 3.75rem);
+    }
+}
+
+/* Header Nav & Links css */
+header{
+    margin-top: 20px;
+}
+.header_nav{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 20px 20px;
+    line-height: 1;
+}
+.header_home{
+    flex: 1 0 100%;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-size: clamp(1.5rem, 1.02rem + 2.04vw, 2rem);
+    color: var(--text1);
+    
+}
+a{
+    transition: color 300ms ease-in-out;
+}
+a:hover{
+    color:var(--accent);
+}
+.social_icon svg{
+    display:block;
+}
+.social_icon > svg > g{
+    transition: fill 300ms ease-in-out;
+}
+.social_icon:hover > svg > g{
+    fill:var(--accent);
+}
+@media(min-width: 37.5em){
+    .header_nav{
+        justify-content: flex-start;
+        text-align: left;
+        gap: 32px;
+    }
+    .header_home{
+        flex:1;
     }
 }
